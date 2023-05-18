@@ -1,0 +1,20 @@
+<header>
+    <div class="bg-slate-600 h-11 flex flex-row justify-between items-center text-white">
+        <section class="w-[20%]">
+            <button (click)="onNavBack()" class="text-base pl-4">
+                <div class="flex items-center">
+                    <span class="material-icons text-base">arrow_back_ios</span>
+                    terug  
+                </div>
+                </button>
+        </section>
+    
+        <section>
+            <span class="text-base">Flightnumber {{ launch?.flight_number }}</span>
+        </section>
+
+        <section class="w-[20%]">
+            
+        </section>
+    </div>
+</header>

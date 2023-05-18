@@ -1,0 +1,5 @@
+<header>
+    <div class="bg-slate-600 h-11 flex flex-row justify-center items-center text-white">
+        SpaceX Launches
+    </div>
+</header>

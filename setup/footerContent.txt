@@ -1,0 +1,5 @@
+<footer>
+    <div class="bg-slate-400 h-11 flex flex-row justify-center items-center text-slate-700"> 
+        ©2023 Expertum
+    </div>
+</footer>
