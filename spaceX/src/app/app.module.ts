@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LaunchListComponent } from './launch-list/launch-list.component';
 import { LaunchListItemComponent } from './launch-list-item/launch-list-item.component';
+import { LaunchDetailComponent } from './launch-detail/launch-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LaunchListComponent,
-    LaunchListItemComponent
+    LaunchListItemComponent,
+    LaunchDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -19,6 +21,6 @@ import { LaunchListItemComponent } from './launch-list-item/launch-list-item.com
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [LaunchListComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

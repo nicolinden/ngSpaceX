@@ -16,6 +16,17 @@ export class LaunchService {
             this.launches.map(item => item.isRead = false);
         })
     }
+    
+    getImage (launchId: string) : string {
+        const launch = this.launches.find(item => item.id === launchId);
+        
+        if (launch) {
+            const images = launch.links.flickr.original
+            return images[Math.floor(Math.random() * images.length)];
+        } else {
+            return "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled.png";
+        }
+    }
 
     update(id: string, value: boolean) {
         const launch = this.launches.find(item => item.id === id);
