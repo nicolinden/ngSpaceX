@@ -1,18 +1,20 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Launch } from '../model/launch.model';
+import { LaunchService } from '../launch.service';
 
 @Component({
   selector: 'app-launch-list-item',
   templateUrl: './launch-list-item.component.html',
-  styleUrls: ['./launch-list-item.component.css']
+  styleUrls: ['./launch-list-item.component.css'],
 })
 export class LaunchListItemComponent {
 
   @Input() launch!: Launch
-  @Output() updateIsRead = new EventEmitter<string>();
+
+  constructor(private launchService: LaunchService) { } 
 
   onLaunchClicked() { 
-    this.updateIsRead.emit(this.launch.id)
+    this.launchService.update(this.launch.id, true);
   }
 
 }

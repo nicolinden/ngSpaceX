@@ -1,29 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Launch } from '../model/launch.model';
+import { LaunchService } from '../launch.service';
 
 @Component({
   selector: 'app-launch-list',
   templateUrl: './launch-list.component.html',
-  styleUrls: ['./launch-list.component.css']
+  styleUrls: ['./launch-list.component.css'],
 })
 export class LaunchListComponent implements OnInit  {
 
-  launches: Array<Launch> =  [];
-  launchPath = 'https://api.spacexdata.com/v5/launches';
+  constructor(private launchService: LaunchService) { } 
 
-  constructor(private http: HttpClient) { } 
+  get launches () { return this.launchService.launches }
 
   ngOnInit(): void {
-    if (this.launches.length === 0) this.getLaunches();
-  }
-
-  getLaunches() : void {
-    this.http.get<Array<Launch>>(this.launchPath).subscribe((data: Array<Launch>) => {
-      this.launches = data
-        .filter((item: Launch) => item.links.flickr.original.length > 0 && item.details);
-      this.launches.map(item => item.isRead = false);
-    })
+    if (this.launchService.launches.length === 0) this.launchService.getLaunches();
   }
 
   update(launchId: string) {
