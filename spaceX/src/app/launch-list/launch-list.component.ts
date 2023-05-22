@@ -26,8 +26,8 @@ export class LaunchListComponent implements OnInit  {
     })
   }
 
-  onLaunchClicked(launch: Launch) {
-    launch.isRead = !launch.isRead;
+  update(launchId: string) {
+    const launch = this.launches.find(item => item.id === launchId);
+    launch!.isRead = !launch?.isRead; 
   }
-
 }
