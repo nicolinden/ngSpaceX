@@ -1,0 +1,3 @@
+  onLaunchClicked(launch: Launch) {
+    launch.isRead = !launch.isRead;
+  }

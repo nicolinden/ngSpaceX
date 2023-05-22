@@ -1,0 +1,13 @@
+<section class="page">
+    <header>
+        <!-- Place here your header content -->
+    </header>
+
+    <main>
+        <!-- Place here your page content -->
+    </main>
+
+    <footer>
+        <!-- Place here your footer content -->
+    </footer>
+</section>

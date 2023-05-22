@@ -1,0 +1,5 @@
+    <div *ngFor="let launch of launches">
+        <div class="flex justify-between items-center p-2 border-b hover:bg-slate-50 cursor-pointer">
+            launch-list works!
+        </div>
+    </div>

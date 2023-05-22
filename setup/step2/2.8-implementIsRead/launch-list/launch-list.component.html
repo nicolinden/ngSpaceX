@@ -1,0 +1,42 @@
+<section class="page">
+    <header>
+        <header>
+            <div class="bg-slate-600 h-11 flex flex-row justify-center items-center text-white">
+                SpaceX Launches
+            </div>
+        </header>
+    </header>
+
+    <main>
+        <div *ngFor="let launch of launches">
+            <div class="flex justify-between items-center p-2 border-b hover:bg-slate-50 cursor-pointer" (click)="onLaunchClicked(launch)">
+                <!-- LINKS -->
+                <div class="flex items-center"> 
+                    <img src="{{ launch?.links?.patch?.small }}" alt="" width="40px" height="40px">
+                    <div class="flex flex-col pl-2">
+                        <span class="text-slate-900" [ngStyle]="{'color': launch.isRead ? 'black' : 'midnightblue'}" [ngClass]="{'boldText': !launch.isRead}">{{ launch?.name }}</span>
+                        <!-- <span class="text-slate-600">{{ launch?.date_local | date }}</span> -->
+                        <span class="text-slate-600">{{ launch?.date_local | date:'fullDate' }}</span>
+                    </div>    
+                </div>
+                <!-- LINKS -->
+
+                <!-- RECHTS -->
+                <div class="flex items-center">
+                    <div class="flex flex-col items-end">
+                        <span class="material-icons text-xl text-gray-TXT pl-4">chevron_right</span>    
+                    </div>
+                </div>
+                <!-- RECHTS -->   
+            </div>
+        </div>    
+    </main>
+
+    <footer>
+        <footer>
+            <div class="bg-slate-400 h-11 flex flex-row justify-center items-center text-slate-700"> 
+                ©2023 Expertum
+            </div>
+        </footer>
+    </footer>
+</section>
